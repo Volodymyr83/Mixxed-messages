@@ -1,16 +1,16 @@
 const nounArray = [
     {word:'I', person:'first', number: 'singular'},
-    {word:'We', person:'first', number: 'plural'},
-    {word:'You', person:'first', number: 'plural'},
-    {word:'He', person:'second', number: 'singular'},
-    {word:'She', person:'second', number: 'singular'},
-    {word:'It', person:'second', number: 'singular'},
-    {word:'They', person:'second', number: 'plural'},
-    {word:'A Dog', person:'second', number: 'singular'},
-    {word:'The Sharks', person:'second', number: 'plural'},
-    {word:'Tomatos', person:'second', number: 'plural'},
+    {word:'we', person:'first', number: 'plural'},
+    {word:'you', person:'first', number: 'plural'},
+    {word:'he', person:'second', number: 'singular'},
+    {word:'she', person:'second', number: 'singular'},
+    {word:'it', person:'second', number: 'singular'},
+    {word:'they', person:'second', number: 'plural'},
+    {word:'a dog', person:'second', number: 'singular'},
+    {word:'the sharks', person:'second', number: 'plural'},
+    {word:'tomatos', person:'second', number: 'plural'},
     {word:'Jack', person:'second', number: 'singular'},
-    {word:'A See', person:'second', number: 'singular'},
+    {word:'a see', person:'second', number: 'singular'},
     {word:'Mars', person:'second', number: 'singular'},
     {word:'The USA', person:'second', number: 'singular'}
 ]
@@ -31,6 +31,16 @@ const verbArray = [
     {first:'eat', second:'ate', third: 'eaten', person2: 'eats' }    
 ]
 
+const conjunctionArray = [
+    'But',
+    'Suddenly',
+    'And',
+    'Then',
+    'After this,',
+    'For sure,',
+    'Really,'
+]
+
 const verbTenses = [
     'Present simple',
     'Past simple',
@@ -44,6 +54,7 @@ const randomlyChoose = array => {
 }
 
 function creatMessage(){
+    let conjunction = randomlyChoose(conjunctionArray)
     let noun = randomlyChoose(nounArray);
     let verb = randomlyChoose(verbArray);
     const tense = randomlyChoose(verbTenses);
@@ -105,7 +116,7 @@ function creatMessage(){
         }
 
     }
-    return noun.word + ' ' + verb + '.';
+    return conjunction + ' ' + noun.word + ' ' + verb + '.';
 }
 
 let message = '';
