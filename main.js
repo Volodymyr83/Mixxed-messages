@@ -112,4 +112,4 @@ let message = '';
 for (let index = 0; index < 100; index++) {
    message += creatMessage() + ' ';     
 }
-console.log(message);    
+console.log(message);
